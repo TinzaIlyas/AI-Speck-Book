@@ -1,20 +1,43 @@
-// {
-//   // This file is not used in compilation. It is here just for a nice editor experience.
-//   "extends": "@docusaurus/tsconfig",
-//   "compilerOptions": {
-//     "baseUrl": "."
-//   },
-//   "exclude": [".docusaurus", "build"]
-// }
-
-
-
-
 {
+  // This file is not used in compilation. It is here just for a nice editor experience.
+  // Updated to address TypeScript deprecation warnings while maintaining Docusaurus compatibility
   "extends": "@docusaurus/tsconfig",
   "compilerOptions": {
-    "ignoreDeprecations": "6.0"
+    // baseUrl is deprecated in newer TypeScript but required for Docusaurus @site alias resolution
+    "baseUrl": ".",
+    "target": "es2017",
+    "lib": ["dom", "dom.iterable", "es6", "es2017"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    // Replaced deprecated "node" with "bundler" for modern module resolution
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    // Added to suppress deprecation warnings as they don't affect functionality
+    "ignoreDeprecations": "6.0",
+    "plugins": [
+      {
+        "name": "typescript-deno-plugin",
+        "enable": false
+      }
+    ]
   },
-  "exclude": [".docusaurus", "build"]
-}
+  "include": [
+    "src/**/*",
+    "docusaurus.config.ts",
+    "sidebars.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    ".docusaurus",
+    "build"
+  ]
 
+}

@@ -77,7 +77,7 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Kitab',
+          label: 'Book',
         },
         {
           to: '/blog',
@@ -96,7 +96,7 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Kitab',
+          title: 'Book',
           items: [
             {
               label: 'Introduction',
