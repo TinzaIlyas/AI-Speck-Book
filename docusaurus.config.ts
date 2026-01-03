@@ -12,8 +12,8 @@ const config: Config = {
     v4: true,
   },
 
-  url: 'https://tinzailelyas.github.io',
-  baseUrl: '/AI-Spec-Book/',
+  url: 'https://your-vercel-project-url.vercel.app',
+  baseUrl: '/',
 
   organizationName: 'TinzaIlyas',
   projectName: 'AI-Spec-Book',
